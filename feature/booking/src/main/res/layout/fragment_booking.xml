@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F6F6F9"
+    tools:context=".presentation.BookingFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F6F6F9"
+        tools:context=".presentation.BookingFragment">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/hotel_info_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="10dp"
+            android:background="#FFFFFF"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintBottom_toTopOf="@id/hotel_info_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/rating_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/rounded_corners"
+                    android:orientation="horizontal"
+                    android:padding="3dp"
+                    android:paddingEnd="10dp"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="2dp"
+                        android:contentDescription="@string/icon_star"
+                        android:src="@drawable/star_icon" />
+
+                    <TextView
+                        android:id="@+id/rating_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:textColor="@color/yellow_star"
+                        tools:text="5" />
+
+                    <TextView
+                        android:id="@+id/rating_name_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:textColor="@color/yellow_star"
+                        tools:text="Превосходно" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/hotel_name_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="22sp"
+                    tools:text="Steigenberger Makadi" />
+
+                <TextView
+                    android:id="@+id/adress_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
+                    android:textColor="@color/blue_link"
+                    android:textSize="14sp"
+                    tools:text="Madinat Makadi, Safaga Road, Makadi Bay, Египет" />
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/transfer_info_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#FFFFFF"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hotel_info_container">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp">
+
+                <TextView
+                    android:id="@+id/departure_header_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Вылет из"
+                    android:textColor="@color/gray_text"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/arrival_country_header_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Страна, город"
+                    android:textColor="@color/gray_text"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/departure_header_text_view" />
+
+                <TextView
+                    android:id="@+id/date_header_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Даты"
+                    android:textColor="@color/gray_text"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/arrival_country_header_text_view" />
+
+                <TextView
+                    android:id="@+id/nights_header_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Кол-во ночей"
+                    android:textColor="@color/gray_text"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/date_header_text_view" />
+
+                <TextView
+                    android:id="@+id/hotel_header_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Отель"
+                    android:textColor="@color/gray_text"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/nights_header_text_view" />
+
+                <TextView
+                    android:id="@+id/room_header_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Номер"
+                    android:textColor="@color/gray_text"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/hotel_header_text_view" />
+
+                <TextView
+                    android:id="@+id/nutrition_header_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Питание"
+                    android:textColor="@color/gray_text"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/room_header_text_view" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:barrierDirection="end"
+                    app:constraint_referenced_ids="arrival_country_header_text_view,
+                date_header_text_view, departure_header_text_view, hotel_header_text_view,
+                nights_header_text_view, nutrition_header_text_view, room_header_text_view" />
+
+                <Space
+                    android:id="@+id/space"
+                    android:layout_width="40dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintStart_toEndOf="@id/barrier" />
+
+                <TextView
+                    android:id="@+id/departure_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/departure_header_text_view"
+                    app:layout_constraintStart_toEndOf="@id/space"
+                    tools:text="Санкт-Петербург" />
+
+                <TextView
+                    android:id="@+id/arrival_country_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/arrival_country_header_text_view"
+                    app:layout_constraintStart_toEndOf="@id/space"
+                    tools:text="Египет, Хургада" />
+
+                <TextView
+                    android:id="@+id/date_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/date_header_text_view"
+                    app:layout_constraintStart_toEndOf="@id/space"
+                    tools:text="19.09.2023 – 27.09.2023" />
+
+                <TextView
+                    android:id="@+id/nights_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/nights_header_text_view"
+                    app:layout_constraintStart_toEndOf="@id/space"
+                    tools:text="7 ночей" />
+
+                <TextView
+                    android:id="@+id/hotel_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/hotel_header_text_view"
+                    app:layout_constraintStart_toEndOf="@id/space"
+                    tools:text="Steigenberger Makadi" />
+
+                <TextView
+                    android:id="@+id/room_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="180dp"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/room_header_text_view"
+                    app:layout_constraintStart_toEndOf="@id/space"
+                    tools:text="Стандартный с видом на бассейн или сад" />
+
+                <TextView
+                    android:id="@+id/nutrition_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintBaseline_toBaselineOf="@id/nutrition_header_text_view"
+                    app:layout_constraintStart_toEndOf="@id/space"
+                    tools:text="Все включено" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/customer_info_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#FFFFFF"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/transfer_info_container">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Информация о покупателе"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/phone_text_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phone_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/text_input_background"
+                        android:hint="Номер телефона"
+                        android:inputType="phone"
+                        android:minWidth="400dp"
+                        android:padding="15dp"
+                        android:textColor="@color/input_color"
+                        android:textSize="17sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/mail_text_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mail_edit_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/text_input_background"
+                        android:hint="Почта"
+                        android:minWidth="400dp"
+                        android:padding="15dp"
+                        android:textColor="@color/input_color"
+                        android:textSize="17sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/explanatory_description_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/explanatory_description" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <ExpandableListView
+            android:id="@+id/tourists_expandable_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:divider="@android:color/transparent"
+            android:orientation="vertical"
+            android:scrollbars="none"
+            android:groupIndicator="@null"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/prices_info_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/customer_info_container" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/prices_info_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tourists_expandable_list_view">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp">
+
+                <TextView
+                    android:id="@+id/tour_price_header_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Тур"
+                    android:textColor="@color/gray_text"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fuel_charge_header_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Топливный сбор"
+                    android:textColor="@color/gray_text"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tour_price_header_text_view" />
+
+                <TextView
+                    android:id="@+id/service_charge_header_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Сервисный сбор"
+                    android:textColor="@color/gray_text"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fuel_charge_header_text_view" />
+
+                <TextView
+                    android:id="@+id/total_price_header_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="К оплате"
+                    android:textColor="@color/gray_text"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/service_charge_header_text_view" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barrier_prices"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:barrierDirection="end"
+                    app:constraint_referenced_ids="total_price_header_text_view,
+                tour_price_header_text_view, service_charge_header_text_view,
+                fuel_charge_header_text_view" />
+
+                <Space
+                    android:id="@+id/space_prices"
+                    android:layout_width="40dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintStart_toEndOf="@id/barrier_prices" />
+
+                <TextView
+                    android:id="@+id/tour_price_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/tour_price"
+                    app:layout_constraintBaseline_toBaselineOf="@id/tour_price_header_text_view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="186 600 ₽" />
+
+                <TextView
+                    android:id="@+id/fuel_charge_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/fuel_charge_price"
+                    app:layout_constraintBaseline_toBaselineOf="@id/fuel_charge_header_text_view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="9 300 ₽" />
+
+                <TextView
+                    android:id="@+id/service_charge_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/service_charge_price"
+                    app:layout_constraintBaseline_toBaselineOf="@id/service_charge_header_text_view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="2 136 ₽" />
+
+                <TextView
+                    android:id="@+id/total_price_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:text="@string/total_price"
+                    app:layout_constraintBaseline_toBaselineOf="@id/total_price_header_text_view"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="198 036 ₽" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay_top_corners"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/prices_info_container">
+
+            <Button
+                android:id="@+id/choose_room_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_background"
+                android:backgroundTint="#0D72FF"
+                android:padding="10dp"
+                android:text="@string/total_price_button"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

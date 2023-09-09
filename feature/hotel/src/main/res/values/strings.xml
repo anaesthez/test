@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="price_format">от %d ₽</string>
+    <string name="hotel_about">Об отеле</string>
+    <string name="icon_star">Звезда</string>
+    <string name="icon_arrow_right">Стрелка вправо</string>
+    <string name="essential">Самое необходимое</string>
+    <string name="included_items">Что включено</string>
+    <string name="amenities">Удобства</string>
+    <string name="emoji_smile">Улыбка</string>
+    <string name="choose_room_nav">К выбору номера</string>
+</resources>

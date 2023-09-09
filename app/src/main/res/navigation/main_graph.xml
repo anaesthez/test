@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/hotelFragment2">
+
+    <fragment
+        android:id="@+id/roomsFragment"
+        android:name="ru.nesterov.rooms.presentation.RoomsFragment">
+        <action
+            android:id="@+id/action_roomsFragment_to_bookingFragment"
+            app:destination="@id/bookingFragment" />
+        <argument
+            android:name="hotelName"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/hotelFragment2"
+        android:name="ru.nesterov.hotel.presentation.HotelFragment"
+        android:label="Отель" >
+        <action
+            android:id="@+id/action_hotelFragment2_to_roomsFragment"
+            app:destination="@id/roomsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingFragment"
+        android:name="ru.nesterov.booking.presentation.BookingFragment"
+        android:label="Бронирование">
+        <action
+            android:id="@+id/action_bookingFragment_to_confirmationFragment"
+            app:destination="@id/confirmationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="ru.nesterov.confirmation.ConfirmationFragment"
+        android:label="Заказ оплачен" />
+</navigation>

@@ -1,0 +1,76 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "65a3a0f9cf4dc5e67999413a81c81317",
+    "entities": [
+      {
+        "tableName": "tourists",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `tourist_number` TEXT NOT NULL, `name` TEXT NOT NULL, `surname` TEXT NOT NULL, `birthday` TEXT NOT NULL, `citizenship` TEXT NOT NULL, `international_passport_number` TEXT NOT NULL, `international_passport_validity` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "touristNumber",
+            "columnName": "tourist_number",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "surname",
+            "columnName": "surname",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "birthday",
+            "columnName": "birthday",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "citizenship",
+            "columnName": "citizenship",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "internationalPassportNumber",
+            "columnName": "international_passport_number",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "internationalPassportValidity",
+            "columnName": "international_passport_validity",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '65a3a0f9cf4dc5e67999413a81c81317')"
+    ]
+  }
+}

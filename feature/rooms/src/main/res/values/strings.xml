@@ -1,0 +1,5 @@
+<resources>
+    <string name="more_about">Подробнее о номере</string>
+    <string name="price_text">%d ₽</string>
+    <string name="choose_room">Выбрать номер</string>
+</resources>

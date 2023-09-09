@@ -1,0 +1,12 @@
+<resources>
+    <string name="icon_star">Звезда</string>
+    <string name="date">%1$s - %2$s</string>
+
+    <string name="explanatory_description">Эти данные никому не передаются. После оплаты мы вышли
+        чек на указанный вами номер и почту</string>
+    <string name="tour_price">%d ₽</string>
+    <string name="fuel_charge_price">%d ₽</string>
+    <string name="service_charge_price">%d ₽</string>
+    <string name="total_price">%d ₽</string>
+    <string name="total_price_button">Оплатить %d ₽</string>
+</resources>
